@@ -17,18 +17,21 @@ MRCs.ArchiveNames <- list(Pb = gsub('.pdf', '', list.files(path = 'www/CertMRC/P
                           EDTA = gsub('.pdf', '', list.files(path = 'www/CertMRC/EDTA')))
 
 MRCs.MassFraction <- list(Pb = list(c(round(207.209 / 331.219, 6), 3e-4/2)), # NIST SRM 928
-                          EDTA = list(c(0.9986, 0.00015),# UNIM GSO 2960-84
-                                      c(0.99874, 0.00038)))     # UNIM Caracterizado INM
+                          EDTA = list(c(0.9984, 0.0009), # INM
+                                      c(0.9986, 0.00015),# UNIM GSO 2960-84
+                                      c(0.99874, 0.00038)# UNIM Caracterizado INM
+                                      ))     
                           
 MRC.At_MolWeigths <- list(Pb = list(c(207.209, 0.005)), # NIST SRM 928 # Decid'i no dividir por raiz de tres
                           EDTA = list(round(c(3.722368e+02, 6.332914e-03), 4),
-                                      round(c(3.722368e+02, 6.332914e-03), 4))) # UNIM GSO 2960-84
+                                      round(c(3.722368e+02, 6.332914e-03), 4),
+                                      round(c(3.722368e+02, 6.332914e-03), 4))) 
 
 MRC.densities     <- list(Pb = list(c(4.53, 0.05)), # NIST SRM 928 # Decid'i no dividir por raiz de tres
-                          EDTA = list(c(0.860, 0.005), c(0.860, 0.005))) # UNIM GSO 2960-84
+                          EDTA = list(c(0.860, 0.005), c(0.860, 0.005), c(0.860, 0.005))) # UNIM GSO 2960-84
 
 MRC.ExpiricyDates <- list(Pb = list(as.Date('2026-01-01')), # NIST SRM 928 # Preguntar cuando abrieron el frasco
-                          EDTA = list(as.Date('2020-08-30'), as.Date('2023-12-31'))) # UNIM GSO 2960-84
+                          EDTA = list(as.Date('2028-11-22'), as.Date('2020-08-30'), as.Date('2024-12-31'))) # UNIM GSO 2960-84
                           
 names(MRCs.MassFraction$Pb) <- names(MRC.At_MolWeigths$Pb) <- names(MRC.ExpiricyDates$Pb) <- names(MRC.densities$Pb) <- MRCs.ArchiveNames$Pb
 names(MRCs.MassFraction$EDTA) <- names(MRC.At_MolWeigths$EDTA) <- names(MRC.ExpiricyDates$EDTA) <- names(MRC.densities$EDTA) <- MRCs.ArchiveNames$EDTA
