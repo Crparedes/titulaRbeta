@@ -154,5 +154,5 @@ server <- function(input, output, session, devMode = TRUE) {
   
 }
 
-runApp(list(ui=ui, server=server), host="0.0.0.0", port=1234)
+runApp(list(ui=ui, server=server))#, host="0.0.0.0", port=1234)
 # shinyApp(ui = ui, server = server, enableBookmarking = "url")
